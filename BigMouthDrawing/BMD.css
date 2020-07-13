@@ -63,8 +63,11 @@ body {
 	position: absolute;
 	display: flex;
 	left: 50%;
-	top: 26%;
+	top: -2%;
 	transform: translate(-50%, 0%);
+}
+
+.teeth {
 	z-index: 2;
 }
 
@@ -80,7 +83,7 @@ body {
 	position: absolute;
 	display: flex;
 	left: 50%;
-	bottom: 23%;
+	bottom: -10%;
 	transform: translate(-50%, 0%);
 	z-index: 2;
 }
@@ -103,7 +106,7 @@ body {
 .eyes-container {
 	position: absolute;
 	left: 50%;
-	top: 10%;
+	top: -30%;
 	transform: translate(-50%, 0%);
 	display: flex;
 }
