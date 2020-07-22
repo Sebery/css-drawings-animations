@@ -1,0 +1,166 @@
+/* COLORS */
+$background-color: #fed072;
+$canvas-color: #afe5ff;
+$skin-color: #ffebd3;
+$skin-shadow-color: #ffd8be;
+$face-elements-color: #390a16;
+$hair-color: #ffc0d8;
+$hair-shadow-color: #fea4be;
+$shirt-color: #d6a4fe;
+$shirt-shadow-color: #a981c9;
+$buttons-color: #e4e4e4;
+$hair-top-color: #ccc0ff;
+$hair-top-shadow-color: #aaa0d4;
+
+/* GENERAL STYLES */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: $background-color;
+}
+
+/* GENERAL FUNCTIONALITY */
+@mixin center-element {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+}
+
+/* DRAW STYLES */
+.canvas {
+	@include center-element();
+	background: $canvas-color;
+	width: 300px;
+	height: 300px;
+	box-shadow: 0px 2px 100px rgba(0, 0, 0, 0.1);
+
+	/* MAIN HEAD */
+	.head {
+		width: 100px;
+		height: 100px;
+		background: $skin-color;
+		border-radius: 50% 40% 50% 50%;
+		border-bottom: 6px solid $skin-shadow-color;
+		border-left: 6px solid $skin-shadow-color;
+		@include center-element();
+		z-index: 4;
+
+		/* HEAD ELEMENTS */
+		.eyes {
+			display: flex;
+			position: absolute;
+			bottom: 50%;
+			right: -15px;
+			.eye {
+				width: 10px;
+				height: 10px;
+				background: $face-elements-color;
+				border-radius: 50%;
+			}
+
+			.eye:first-child {
+				margin-right: 45px;
+			}
+		}
+
+		.mouth {
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			background: rgba(0, 0, 0, 0);
+			border-radius: 50%;
+			border-bottom: 4px solid $face-elements-color;
+			bottom: 40%;
+			right: 10%;
+		}
+	}
+
+	.top-hair {
+		width: 150px;
+		height: 60px;
+		border-radius: 80% 80% 50% 35%;
+		background: $hair-top-color;
+		position: absolute;
+		left: 46%;
+		top: 23%;
+		transform: translate(-50%, 0%);
+		border-bottom: 8px solid $hair-top-shadow-color;
+		border-right: 4px solid $hair-top-shadow-color;
+		z-index: 5;
+	}
+
+	.bottom-hair {
+		width: 70px;
+		height: 205px;
+		background: $hair-color;
+		position: absolute;
+		left: 31%;
+		top: 30%;
+		transform: translate(-50%, 0%);
+		border-radius: 100% 90% 200% 50%;
+		border-right: 8px solid $hair-shadow-color;
+		z-index: 4;
+	}
+
+	.neck {
+		width: 60px;
+		position: absolute;
+		height: 100px;
+		background: $skin-color;
+		left: 50%;
+		top: 60%;
+		transform: translate(-50%, 0%);
+		border-radius: 200% 200% 50% 50%;
+		z-index: -2;
+		border-left: 6px solid $skin-shadow-color;
+	}
+
+	.shirt {
+		width: 65px;
+		position: absolute;
+		height: 85px;
+		background: $shirt-color;
+		left: 50%;
+		top: 72%;
+		transform: translate(-50%, 0%);
+		border-radius: 30% 30% 0% 0%;
+		z-index: 2;
+		border-left: 6px solid $shirt-shadow-color;
+	}
+
+	.buttons {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		left: 50%;
+		top: 77%;
+		transform: translate(-50%, 0%);
+		z-index: 10;
+
+		.circle {
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: $buttons-color;
+			margin-bottom: 20px;
+		}
+	}
+
+	.body {
+		background: $skin-color;
+		transform: translate(-50%, 0%);
+		border-radius: 20% 20% 0% 0%;
+		z-index: -1;
+		border-left: 6px solid $skin-shadow-color;
+		position: absolute;
+		width: 110px;
+		height: 90px;
+		left: 50%;
+		top: 70%;
+	}
+}
