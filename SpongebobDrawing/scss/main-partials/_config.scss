@@ -1,0 +1,27 @@
+@use 'variables';
+
+/* GENERAL STYLES */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	background: variables.$blue-color;
+}
+
+/* MIXINS */
+@mixin center-element {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin circle-element($bg-color, $w, $h) {
+	background: $bg-color;
+	border-radius: 50%;
+	width: $w;
+	height: $h;
+}
