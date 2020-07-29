@@ -1,0 +1,29 @@
+/* COLORS */
+$background-color: #a962d9;
+
+$dark-blue-color: #364c59;
+$light-blue-color: #419ca6;
+$yellow-color: #ffc301;
+$white-color: #f9f9f9;
+$black-color: #222327;
+
+/* GENERAL STYLES */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background: $background-color;
+}
+
+/* MIXINS */
+@mixin center-element {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
